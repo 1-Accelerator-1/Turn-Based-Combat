@@ -4,7 +4,7 @@ using Assets.Scripts.Player;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class BattleSystem : MonoBehaviour
 {
@@ -16,10 +16,27 @@ public class BattleSystem : MonoBehaviour
     private GameObject _playerGameObject;
     private GameObject _enemyGameObject;
 
-    [SerializeField] private Button _attackButton;
-    [SerializeField] private Button _healButton;
+    private VisualElement _commandPanel;
+
+    private Button _attackButton;
+    private Button _healButton;
+
+    [SerializeField] private UIDocument _battleUIDocument;
 
     [SerializeField] private TMP_Text _battleDialogText;
+
+    private void Awake()
+    {
+        _commandPanel = _battleUIDocument.rootVisualElement.Q("CommandPanel");
+
+        _attackButton = _battleUIDocument.rootVisualElement.Q("AttackButton") as Button;
+        _healButton = _battleUIDocument.rootVisualElement.Q("HealButton") as Button;
+
+        _attackButton.RegisterCallback<ClickEvent>(OnAttackButton);
+        _healButton.RegisterCallback<ClickEvent>(OnHealButton);
+
+        //_commandPanel.visible = false;
+    }
 
     public void StartBattle(GameObject playerGameObject, GameObject enemyGameObject)
     {
@@ -39,40 +56,29 @@ public class BattleSystem : MonoBehaviour
         state = BattleState.PlayerTurn;
         _battleDialogText.text = "Choose an action...";
 
-        if (!_attackButton.gameObject.activeSelf && !_healButton.gameObject.activeSelf)
-        {
-            _attackButton.gameObject.SetActive(true);
-            _healButton.gameObject.SetActive(true);
-        }
-        else if (!_attackButton.interactable && !_healButton.interactable)
-        {
-            _attackButton.interactable = true;
-            _healButton.interactable = true;
-        }
+        _commandPanel.visible = true;
     }
 
-    public void OnAttackButton()
+    public void OnAttackButton(ClickEvent clickEvent)
     {
         if (state != BattleState.PlayerTurn)
         {
             return;
         }
 
-        _attackButton.interactable = false;
-        _healButton.interactable = false;
+        _commandPanel.visible = false;
 
         StartCoroutine(PlayerAttack());
     }
 
-    public void OnHealButton()
+    public void OnHealButton(ClickEvent clickEvent)
     {
         if (state != BattleState.PlayerTurn)
         {
             return;
         }
 
-        _attackButton.interactable = false;
-        _healButton.interactable = false;
+        _commandPanel.visible = false;
 
         StartCoroutine(PlayerHeal());
     }
@@ -145,8 +151,5 @@ public class BattleSystem : MonoBehaviour
         {
             _battleDialogText.text = "You are defeated!";
         }
-
-        _attackButton.interactable = false;
-        _healButton.interactable = false;
     }
 }

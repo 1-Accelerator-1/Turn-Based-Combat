@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.UI.Unit;
+using Assets.Scripts.Unit;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -12,7 +13,6 @@ namespace Assets.Scripts
         public Transform enemyBattleStation;
 
         public UnitBattleHUD playerBattleHUD;
-        public UnitBattleHUD enemyBattleHUD;
 
         public BattleSystem battleSystem;
 
@@ -28,7 +28,6 @@ namespace Assets.Scripts
             var enemyGameObject = Instantiate(enemyPrefab, enemyBattleStation);
 
             var playerUnitStats = playerGameObject.GetComponent<UnitStats>();
-            var enemyUnitStats = enemyGameObject.GetComponent<UnitStats>();
 
             var playerUnitHealth = playerGameObject.GetComponent<UnitHealth>();
 

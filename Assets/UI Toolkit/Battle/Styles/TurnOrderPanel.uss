@@ -1,0 +1,18 @@
+:root {
+}
+
+.turn-icon {
+    margin-right: 10px;
+    margin-bottom: 7px;
+    margin-left: 10px;
+    width: 90px;
+    height: 70px;
+    border-left-color: rgb(201, 194, 194);
+    border-right-color: rgb(201, 194, 194);
+    border-top-color: rgb(201, 194, 194);
+    border-bottom-color: rgb(201, 194, 194);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}

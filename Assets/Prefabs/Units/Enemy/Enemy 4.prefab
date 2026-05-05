@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 9178382634602241350}
   - component: {fileID: 2668047453422445629}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,11 +231,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c061cdd9f21834388c911acb1bffd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unit
-  Name: Goblin
+  Name: Goblin #4
   Level: 1
   Heal: 20
-  Strength: 10
-  Endurance: 100
+  Strength: 20
+  Endurance: 110
   Dexterity: 0
   Agility: 0
   Magic: 0

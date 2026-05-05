@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/CustomStyles/TurnOrderPanel.uss?fileID=7433441132597879392&amp;guid=afd2758b82beb324ba90f0f42e276c3c&amp;type=3#TurnOrderPanel"/>
+    <ui:VisualElement style="flex-grow: 1; align-self: center; justify-content: center;">
+        <ui:Image name="TurnIcon" class="turn-icon"/>
+    </ui:VisualElement>
+</ui:UXML>

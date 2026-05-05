@@ -1,0 +1,31 @@
+:root {
+}
+
+.battle-command-button {
+    font-size: 20px;
+    color: rgb(149, 149, 149);
+    border-left-color: rgb(149, 149, 149);
+    border-right-color: rgb(149, 149, 149);
+    border-top-color: rgb(149, 149, 149);
+    border-bottom-color: rgb(149, 149, 149);
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    background-color: rgba(0, 0, 0, 0.54);
+    padding-top: 10px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    margin-top: 2px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+}
+
+.battle-command-button:hover {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    border-color: rgb(255, 255, 255);
+    transition-duration: 0.15s;
+}

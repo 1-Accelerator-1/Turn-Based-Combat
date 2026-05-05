@@ -1,8 +1,7 @@
-﻿using Assets.Scripts.Unit;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Unit
 {
     public class UnitHealth : MonoBehaviour
     {
